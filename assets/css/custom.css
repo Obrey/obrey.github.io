@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@500&family=Roboto:wght@300&display=swap');
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'KNUTRUTHTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/KNUTRUTHTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cafe24Supermagic-Bold-v1.0';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/Cafe24Supermagic-Bold-v1.0.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+:root {
+    --default-font: 'NanumSquareNeo-Variable', sans-serif;
+    --body-font: 'Pretendard-Regular', sans-serif;
+    --code-font: 'Roboto', sans-serif;
+    --japanese-font: 'M PLUS 1p', sans-serif;
+    --handwriting-font: 'omyu_pretty', sans-serif;
+  }
+ 
+  
+html {
+    font-family: var(--body-font);
+}
+
+.content {
+    font-family: var(--body-font);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--default-font), var(--japanese-font), sans-serif ;
+    font-weight: bold ;
+}
+
+h1 {
+    font-size: 1.7em !important;
+}
+
+h2 {
+    font-size: 1.6em !important;
+}
+
+h3 {
+    font-size: 1.5em !important;
+}
+
+h4 {
+    font-size: 1.4em !important;
+}
+
+h5 {
+    font-size: 1.3em !important;
+}
+
+h6 {
+    font-size: 1.2em !important;
+}
