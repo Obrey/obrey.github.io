@@ -17,8 +17,6 @@ aliases:
 MOC: "[[09. MOC/Develop MOC]]"
 title: Hugo Hextra
 mindmap-plugin: 
-sidebar:
-  open: true
 weight: "2"
 prev: /docs/Hugo Amethyst/Hugo serve하기
 next: /docs/Hugo Hextra/스킨을 고르자

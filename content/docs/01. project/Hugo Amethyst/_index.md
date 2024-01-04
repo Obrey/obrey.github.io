@@ -17,8 +17,6 @@ aliases:
 MOC: "[[09. MOC/Develop MOC]]"
 title: Hugo Amethyst
 mindmap-plugin: 
-sidebar:
-  open: true
 weight: "1"
 ---
 ---
