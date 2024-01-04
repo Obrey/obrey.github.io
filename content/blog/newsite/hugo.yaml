@@ -15,19 +15,27 @@ services:
 
 defaultContentLanguage: en
 languages:
+  kr:
+    languageName: 한국어
+    languageCode: kr
+    contentDir: content/kr
+    title: HANZOE.xyz
+    description: Your Site Description
+    weight: 1
   en:
     languageName: English
     languageCode: en-US
     contentDir: content/en
-    title: Your Site Name
+    title: HANZOE.xyz
     description: Your Site Description
-    weight: 1
+    weight: 2
+
 
 params:
 
   author:
-    name: Your Name
-    url: https://your.site
+    name: HAN Zoe
+    url: https://hanzoe.xyz
 
   themeColors:
     light: '#ffffff'
@@ -59,7 +67,7 @@ params:
 
   home:
 
-    repository: 'https://obrey.github.io/galaxy/'
+    repository: 'https://obrey.github.io/'
 
 #    repositories:
 #      - name: Website

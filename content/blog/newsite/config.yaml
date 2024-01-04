@@ -13,15 +13,23 @@ services:
   googleAnalytics:
     ID: G-xxxxxxxxxx
 
-defaultContentLanguage: en
+defaultContentLanguage: kr
 languages:
+  kr:
+    languageName: 한국어
+    languageCode: kr
+    contentDir: content/kr
+    title: HANZOE.xyz
+    description: Your Site Description
+    weight: 1
   en:
     languageName: English
     languageCode: en-US
     contentDir: content/en
-    title: Your Site Name
+    title: HANZOE.xyz
     description: Your Site Description
-    weight: 1
+    weight: 2
+
 
 params:
 
