@@ -55,6 +55,7 @@ defaultContentLanguage: kr
 languages:
   kr:
     languageName: 한국어
+    languageCode: kr
     weight: 1
     title: HANZOE.xyz
   en:
