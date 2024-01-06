@@ -25,7 +25,4 @@ next: /docs/Hugo Hextra/스킨을 고르자
 ---
 ---
 
-## Hugo Hextra
-휴고 헥스트라 주소
-
-이를 바탕으로 시작.
+para의 project 폴더입니다.
