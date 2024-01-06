@@ -9,6 +9,7 @@ authors:
   - name: iolite
     link: https://example.com/johndoe
 excludeSearch: true
+comments: true
 
 ---
 
