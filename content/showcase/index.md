@@ -8,12 +8,12 @@ layout: wide
 <div class="mt-4"></div>
 
 <p class="mb-12 text-center text-lg text-gray-500 dark:text-gray-400">
-Open source projects powered by Hextra.
+그 외 제가 운영하는 다른 블로그들
 </p>
 
 {{< cards >}}
-  {{< card link="https://developers.osuny.org" title="Osuny" image="https://raw.githubusercontent.com/noesya/osuny-developers/main/static/images/showcase-hextra/screenshot.png" imageStyle="object-fit:cover; aspect-ratio:16/9;" >}}
-  {{< card link="https://getporter.org/" title="Porter" image="https://repository-images.githubusercontent.com/155893691/aa249c80-fcf3-11ea-93b0-30079e8d7de4" imageStyle="object-fit:cover; aspect-ratio:16/9;" >}}
-  {{< card link="https://lutheranconfessions.org/" title="LutheranConfessions" image="https://github.com/imfing/hextra/assets/5097752/ad6625e4-88cd-4cad-b102-5399997d0359" imageStyle="object-fit:cover; aspect-ratio:16/9;" >}}
-  {{< card link="https://github.com/imfing/hextra-starter-template/" title="Hextra Starter Template" image="https://user-images.githubusercontent.com/5097752/263551418-c403b9a9-a76c-47a6-8466-513d772ef0b7.jpg" imageStyle="object-fit:cover; aspect-ratio:16/9;" >}}
+  {{< card link="http://obrey.github.io/365days" title="365days" image="https://images.unsplash.com/photo-1635492491273-455af7728453?q=80&w=1320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" imageStyle="object-fit:cover; aspect-ratio:16/9;" >}}
+  {{< card link="http://obrey.github.io/typepalette/" title="Type Palette" image="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" imageStyle="object-fit:cover; aspect-ratio:16/9;" >}}
+  {{< card link="https://obrey.github.io/" title="준비중" image="https://images.unsplash.com/photo-1637952112301-6090dca83ccb?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" imageStyle="object-fit:cover; aspect-ratio:16/9;" >}}
+  {{< card link="https://obrey.github.io/" title="준비중" image="https://images.unsplash.com/photo-1637952112301-6090dca83ccb?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" imageStyle="object-fit:cover; aspect-ratio:16/9;" >}}
 {{< /cards >}}
