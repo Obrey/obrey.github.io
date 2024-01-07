@@ -70,4 +70,6 @@ languages:
     weight: 2
     title: HANZOE.xyz
 
-
+services:
+  googleAnalytics:
+    ID: G-27DGGW4E94
