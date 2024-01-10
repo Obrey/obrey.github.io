@@ -26,6 +26,10 @@ next: /docs/Hugo Hextra/스킨을 고르자
 #### Hextra
 hextra는 휴고의 테마 중 하나입니다. 몹시 심플하며 반응형 블로그를 지원합니다. 자수정 테마가 작동되지 않아 대안으로 이 테마를 선택했습니다. 
 
+#### Theme
+https://themes.gohugo.io/themes/hextra/
+테마 정보는 이 링크에서 확인할 수 있습니다.
+
 #### List
 {{< cards >}}
   {{< card link="https://obrey.github.io/docs/01.-project/hugo-hextra/hugo-amethyst%EB%A5%BC-%EB%8C%80%EC%B2%B4%ED%95%A0-%ED%85%8C%EB%A7%88-%EC%B0%BE%EA%B8%B0/" title="테마 찾기" icon="book-open" >}}
