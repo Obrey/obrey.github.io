@@ -1,0 +1,23 @@
+
+{{ define "main" }}
+  <div class="mx-auto flex max-w-[90rem]">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" false) }}
+    <article class="w-full break-words min-h-[calc(100vh-var(--navbar-height))] min-w-0 pt-4 pb-8 pl-[max(env(safe-area-inset-left1.5rem)] pr-[max(env(safe-area-inset-left),1.5rem)]">
+      <br class="mt-1.5 text-sm" />
+
+      <section id="tags">
+        {{ $data := .Data }}
+        {{ range $key, $value := .Data.Terms.ByCount }}
+            {{ if ($value.Name) }}
+                <span class="tag">
+                  <a class="items-center justify-between gap-2 cursor-pointer rounded px-2 py-1.5 text-sm transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+                  text-gray-500 hover:bg-gray-100 hover:text-gray-900 contrast-more:border contrast-more:border-transparent contrast-more:text-gray-900 contrast-more:hover:border-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:dark:text-gray-50 contrast-more:dark:hover:border-gray-50" href="{{ "tags/" | relURL }}{{ $value.Name | urlize }}">
+                {{ $value.Name | upper }} <span>({{ $value.Count }})</span>
+            </a>
+                </span>
+            {{ end }}
+        {{ end }}
+      </section>
+    </article>
+  </div>
+{{ end }}
