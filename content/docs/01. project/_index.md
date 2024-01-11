@@ -17,8 +17,6 @@ aliases:
 MOC: "[[09. MOC/Develop MOC]]"
 title: 01. project
 mindmap-plugin: 
-sidebar:
-  open: true
 weight: "1"
 prev: /docs/Hugo Amethyst/최종 사이트
 next: /docs/Hugo Hextra/스킨을 고르자
