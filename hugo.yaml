@@ -34,6 +34,7 @@ menu:
       name: About
       pageRef: /about
       weight: 4
+    - identifier: tags
       name: Tags
       pageRef: /tags
       weight: 5
