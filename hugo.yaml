@@ -77,3 +77,20 @@ languages:
 services:
   googleAnalytics:
     ID: G-27DGGW4E94
+
+outputs:
+  home:
+    - html
+    - rss
+    - json
+  section:
+    - html
+    - rss
+  taxonomy:
+    - html
+  term:
+    - html
+
+services:
+  rss:
+    limit: 42
