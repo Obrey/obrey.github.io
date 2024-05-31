@@ -99,12 +99,9 @@ h6 {
 }
 
 
-code {
-  font-family: var(code-font), sans-serif;
-}
-
-pre {
-  font-family: var(code-font), sans-serif;
+/* code 요소와 pre 요소에 동일한 폰트 스타일 적용 */
+code, pre {
+  font-family: var(code-font), sans-serif !important;
 }
 
 
