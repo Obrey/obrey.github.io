@@ -22,11 +22,11 @@ menu:
       name: Iolite
       pageRef: /docs
       weight: 1
-    - identifier: showcase
-      name: Showcase
-      pageRef: /showcase
-      weight: 2
-    - identifier: blog
+    # - identifier: showcase
+    #   name: Showcase
+    #   pageRef: /showcase
+    #   weight: 2
+    # - identifier: blog
       name: Blog
       pageRef: /blog
       weight: 3
