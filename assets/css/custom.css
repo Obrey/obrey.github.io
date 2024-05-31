@@ -37,8 +37,8 @@
 }
 
 @font-face {
-  font-family: 'NEXON Lv2 Gothic';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+  font-family: 'NEXON Lv1 Gothic OTF';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -47,9 +47,9 @@
 
 
 :root {
-    --default-font: 'NEXON Lv2 Gothic', sans-serif;
+    --default-font: 'NEXON Lv1 Gothic OTF', sans-serif;
     --body-font: 'Pretendard-Regular', sans-serif;
-    --code-font: 'NEXON Lv2 Gothic', sans-serif;
+    --code-font: 'NEXON Lv1 Gothic OTF', sans-serif;
     --japanese-font: 'M PLUS 1p', sans-serif;
     --handwriting-font: 'omyu_pretty', sans-serif;
   }
@@ -91,6 +91,11 @@ h5 {
 
 h6 {
     font-size: 1.2em !important;
+}
+
+
+code, kbd, samp, pre {
+  font-family: var(code-font), sans-serif ;
 }
 
 
