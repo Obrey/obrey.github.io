@@ -37,9 +37,9 @@
 }
 
 @font-face {
-  font-family: 'Freesentation-9Black';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
-  font-weight: 400;
+  font-family: 'NEXON Lv2 Gothic';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
 }
 
@@ -47,9 +47,9 @@
 
 
 :root {
-    --default-font: 'Freesentation-9Black', sans-serif;
+    --default-font: 'NEXON Lv2 Gothic', sans-serif;
     --body-font: 'Pretendard-Regular', sans-serif;
-    --code-font: 'Roboto', sans-serif;
+    --code-font: 'NEXON Lv2 Gothic', sans-serif;
     --japanese-font: 'M PLUS 1p', sans-serif;
     --handwriting-font: 'omyu_pretty', sans-serif;
   }
