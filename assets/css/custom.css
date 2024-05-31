@@ -94,7 +94,7 @@ h6 {
 }
 
 
-code, kbd, samp, pre {
+.code {
   font-family: var(code-font), sans-serif ;
 }
 
