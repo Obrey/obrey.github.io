@@ -36,9 +36,18 @@
     font-style: normal;
 }
 
+@font-face {
+  font-family: 'Freesentation-9Black';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
 
 :root {
-    --default-font: 'NanumSquareNeo-Variable', sans-serif;
+    --default-font: 'Freesentation-9Black', sans-serif;
     --body-font: 'Pretendard-Regular', sans-serif;
     --code-font: 'Roboto', sans-serif;
     --japanese-font: 'M PLUS 1p', sans-serif;
