@@ -43,11 +43,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'NEXONFootballGothicBA1';
+  src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicBA1.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 
 :root {
-    --default-font: 'NEXON Lv1 Gothic OTF', sans-serif;
+    --default-font: 'NEXONFootballGothicBA1', sans-serif;
     --body-font: 'Pretendard-Regular', sans-serif;
     --code-font: 'NEXON Lv1 Gothic OTF', sans-serif;
     --japanese-font: 'M PLUS 1p', sans-serif;
@@ -95,7 +101,11 @@ h6 {
 
 
 .code {
-  font-family: var(code-font), sans-serif ;
+  font-family: var(code-font), sans-serif;
+}
+
+pre {
+  font-family: var(code-font), sans-serif;
 }
 
 
