@@ -29,16 +29,24 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'NanumSquareNeo-Variable';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+@font-face{
+  font-display: swap;
+  font-family: NanumSquareNeo;
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
+  font-weight:300;
 }
 
 @font-face {
   font-family: 'NEXON Lv1 Gothic OTF';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NEXON Lv2 Gothic';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -59,9 +67,10 @@
 
 
 
+
 :root {
-    --default-font: 'Freesentation-9Black', sans-serif;
-    --body-font: 'SUITE-Regular', sans-serif;
+    --default-font: 'NEXON Lv2 Gothic', sans-serif;
+    --body-font: 'NanumSquareNeo', sans-serif;
     --code-font: 'NEXON Lv1 Gothic OTF', sans-serif;
     --japanese-font: 'M PLUS 1p', sans-serif;
     --handwriting-font: 'omyu_pretty', sans-serif;
