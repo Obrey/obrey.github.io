@@ -16,6 +16,10 @@ markup:
   highlight:
     noClasses: false
 
+services:
+  googleAnalytics:
+    ID: G-27DGGW4E94
+
 menu:
   main:
     - identifier: documentation
@@ -73,10 +77,6 @@ languages:
     languageCode: en
     weight: 2
     title: HANZOE.xyz
-
-services:
-  googleAnalytics:
-    ID: G-27DGGW4E94
 
 outputs:
   home:
