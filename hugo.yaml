@@ -52,7 +52,18 @@ menu:
       params:
         icon: github
 
+
 params:
+  description: "제가 배우고, 일상에서 겪은 다양한 일들을 기록합니다."
+  comments:
+    enable: false
+    type: giscus
+    giscus:
+      repo: Obrey/obrey.github.io
+      repoId: R_kgDOLCDwWA
+      category: Comments
+      categoryId: DIC_kwDOLCDwWM4CgMtI
+
   navbar:
     displayTitle: true
     displayLogo: true
