@@ -83,11 +83,11 @@ languages:
     languageCode: kr
     weight: 1
     title: HANZOE.xyz
-  en:
-    languageName: English
-    languageCode: en
-    weight: 2
-    title: HANZOE.xyz
+  # en:
+  #   languageName: English
+  #   languageCode: en
+  #   weight: 2
+  #   title: HANZOE.xyz
 
 outputs:
   home:
