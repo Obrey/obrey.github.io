@@ -56,7 +56,7 @@ menu:
 params:
   description: "제가 배우고, 일상에서 겪은 다양한 일들을 기록합니다."
   comments:
-    enable: true
+    enable: false
     type: giscus
     giscus:
       repo: Obrey/obrey.github.io
