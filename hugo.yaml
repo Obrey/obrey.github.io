@@ -16,10 +16,6 @@ markup:
   highlight:
     noClasses: false
 
-services:
-  googleAnalytics:
-    ID: G-27DGGW4E94
-
 menu:
   main:
     - identifier: documentation
@@ -103,5 +99,7 @@ outputs:
     - html
 
 services:
+  googleAnalytics:
+    ID: G-H0D83B5DWR
   rss:
     limit: 42
