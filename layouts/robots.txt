@@ -1,0 +1,8 @@
+User-agent:*
+
+Allow: /
+
+Sitemap: https://obrey.github.io/sitemap.xml
+
+
+#DaumWebMasterTool:b19189b6ca76ab77a84af8eaf1533ccf08b3f6c29ada2b6f23f4e219bbb0e247:lq4j0uOERH+PNxj+Au216A==
