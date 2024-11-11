@@ -5,7 +5,7 @@ date: 2023-12-31
 tags: 
 aliases: 
 MOC: 
-title: 03. Resource
+title: 003 Resource
 mindmap-plugin: 
 weight: "1"
 prev: 

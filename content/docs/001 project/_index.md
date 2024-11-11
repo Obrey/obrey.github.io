@@ -15,7 +15,7 @@ aliases:
   - 옵시디언
   - 깃허브페이지
 MOC: "[[09. MOC/Develop MOC]]"
-title: 01. project
+title: 001 project
 mindmap-plugin: 
 weight: "1"
 prev: /docs/Hugo Amethyst/최종 사이트
