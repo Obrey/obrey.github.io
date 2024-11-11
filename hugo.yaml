@@ -79,11 +79,11 @@ languages:
     languageCode: ko
     weight: 1
     title: Obrey
-  # en:
-  #   languageName: English
-  #   languageCode: en
-  #   weight: 2
-  #   title: Obrey
+  en:
+    languageName: English
+    languageCode: en
+    weight: 2
+    title: Obrey
 
 outputs:
   home:
