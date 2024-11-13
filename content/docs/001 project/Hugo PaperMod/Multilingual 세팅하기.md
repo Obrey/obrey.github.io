@@ -31,14 +31,14 @@ weight: "6"
 다음 설정을 `hugo.yaml` 파일에 추가합니다.
 
 ```hugo.yaml
-defaultContentLanguage: kr
+defaultContentLanguage: ko
 defaultContentLanguageInSubdir: false
 languages:
-  kr:
+  ko:
     weight: 1
     languageName: 한국어
-    languageCode: kr
-    contentDir: content/kr/
+    languageCode: ko
+    contentDir: content/ko/
     title: 제목
     menu:
       main:
@@ -82,8 +82,8 @@ languages:
           weight: 15
 ```
 
-- `defaultContentLanguage: kr`로 설정하여 기본 언어를 한국어로 설정합니다.
-- `defaultContentLanguageInSubdir: false`로 설정하여 기본 언어에도 주소 뒤에 `/lang/`을 붙입니다. 예: 주소/kr/ 
+- `defaultContentLanguage: ko`로 설정하여 기본 언어를 한국어로 설정합니다.
+- `defaultContentLanguageInSubdir: false`로 설정하여 기본 언어에도 주소 뒤에 `/lang/`을 붙입니다. 예: 주소/ko/ 
 - `contentDir: content/lang`: 위 경로의 폴더에 언어 폴더를 생성합니다. 이 설정을 하지 않아도 됩니다. 저는 따로 설정이 편리하여 이 방법으로 했지만 contentDir 세팅을 하지 않고 같은 디렉토리 내에 개별로 name.en.md 형식으로 설정하는 방법도 있습니다.
 
 #### `content` 파일 설정

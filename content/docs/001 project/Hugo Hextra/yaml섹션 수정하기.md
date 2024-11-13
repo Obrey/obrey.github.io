@@ -97,9 +97,9 @@ params:
 
 ##### 다국어 지원 설정하기
 ```
-defaultContentLanguage: kr
+defaultContentLanguage: ko
 languages:
-  kr:
+  ko:
     languageName: 한국어
     weight: 1
     title: 근청석
