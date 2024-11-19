@@ -16,37 +16,81 @@ markup:
   highlight:
     noClasses: false
 
-menu:
-  main:
-    - identifier: documentation
-      name: Iolite
-      pageRef: /docs
-      weight: 1
-    # - identifier: showcase
-    #   name: Showcase
-    #   pageRef: /showcase
-    #   weight: 2
-    - identifier: blog
-      name: Blog
-      pageRef: /blog
-      weight: 3
-    - identifier: about
-      name: About
-      pageRef: /about
-      weight: 4
-    - identifier: tags
-      name: Tags
-      pageRef: /tags
-      weight: 5
-    - name: Search
-      weight: 10
-      params:
-        type: search
-    - name: GitHub
-      weight: 15
-      url: "https://github.com/imfing/hextra"
-      params:
-        icon: github
+defaultContentLanguage: ko
+languages:
+  ko:
+    languageName: 한국어
+    languageCode: ko
+    weight: 1
+    title: Obrey
+    menu:
+      main:
+        - identifier: documentation
+          name: Iolite
+          pageRef: /docs
+          weight: 1
+        # - identifier: showcase
+        #   name: Showcase
+        #   pageRef: /showcase
+        #   weight: 2
+        - identifier: blog
+          name: Blog
+          pageRef: /blog
+          weight: 3
+        - identifier: about
+          name: About
+          pageRef: /about
+          weight: 4
+        - identifier: tags
+          name: Tags
+          pageRef: /tags
+          weight: 5
+        - name: Search
+          weight: 10
+          params:
+            type: search
+        - name: GitHub
+          weight: 15
+          url: "https://github.com/imfing/hextra"
+          params:
+            icon: github
+  en:
+    languageName: English
+    languageCode: en
+    weight: 2
+    title: Obrey
+    menu:
+      main:
+        - identifier: documentation
+          name: Iolite
+          pageRef: /docs
+          weight: 1
+        # - identifier: showcase
+        #   name: Showcase
+        #   pageRef: /showcase
+        #   weight: 2
+        - identifier: blog
+          name: Blog
+          pageRef: /blog
+          weight: 3
+        - identifier: about
+          name: About
+          pageRef: /about
+          weight: 4
+        - identifier: tags
+          name: Tags
+          pageRef: /tags
+          weight: 5
+        - name: Search
+          weight: 10
+          params:
+            type: search
+        - name: GitHub
+          weight: 15
+          url: "https://github.com/imfing/hextra"
+          params:
+            icon: github
+
 
 
 params:
@@ -72,18 +116,6 @@ params:
     enable: true
     base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
 
-defaultContentLanguage: ko
-languages:
-  ko:
-    languageName: 한국어
-    languageCode: ko
-    weight: 1
-    title: Obrey
-  en:
-    languageName: English
-    languageCode: en
-    weight: 2
-    title: Obrey
 
 outputs:
   home:

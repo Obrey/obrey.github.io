@@ -1,0 +1,82 @@
+name: Deploy Hugo site to Pages and Submit to IndexNow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.121.1 # 기존 버전 유지 또는 변경 가능
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.21'
+
+      - name: Setup Hugo # 기존 방식 유지 또는 변경 가능 (CLI 설치)
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Install Sass # Sass 설치 단계 추가됨
+        run: npm install -g sass
+
+      - name: Save API key to static folder # IndexNow API 키 저장 단계 추가됨
+        run: echo "${{ secrets.INDEXNOW_KEY }}" > static/${{ secrets.INDEXNOW_KEY }}.txt
+
+      - name: Build with Hugo # 기존 빌드 과정 유지 또는 baseURL 수정 가능
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Upload artifact # 기존 업로드 과정 유지
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages # 기존 배포 과정 유지
+        id: deployment
+        uses: actions/deploy-pages@v2
+
+  check-and-submit:
+    runs-on: ubuntu-latest # IndexNow 제출 작업 추가됨
+    needs: deploy 
+    steps:
+      - name: Submit sitemap to IndexNow using indexnow-action 
+        uses: bojieyang/indexnow-action@v2 
+        with:
+          sitemap-location: 'https://obrey.github.io/sitemap.xml'
+          key: ${{ secrets.INDEXNOW_KEY }}
