@@ -75,30 +75,23 @@ Hugo로 작성된 블로그는 GitHub Pages와 같은 정적 사이트 호스팅
 5. APIKEY.txt를 지우고, 깃기록과 배포기록, github action기록 모두 지우기
 
 #### 사이트 루트디렉토리에 API키가 생성
-이 부분이 3일동안 절 힘들게 했습니다. 자신의 깃허브 레포지토리에 들어가서 Setting로 들어갑니다. 
+먼저 GitHub 저장소의 Settings > Security > Actions로 들어갑니다.
 
 ![시크릿 키 발급 경로 설명](https://i.imgur.com/B05CuMc.png)
 
-Security 항목의 Actions로 들어갑니다.
+그 후, New repository secret 버튼을 클릭합니다.
 
 ![시크릿 키 생성 버튼 설명](https://i.imgur.com/Vg5HAtg.png)
-New repository secret을 클릭합니다.
+다음과 같이 Secret 이름은 INDEXNOW_KEY로 하고, 값에는 발급받은 API 키를 입력합니다.
 
 ![INDEX NOW KEY SECRET 설정](https://i.imgur.com/tgKZmPS.png)
 
-Name엔 INDEXNOW_KEY로 해주고
-Secret은 이를 대처할 텍스트를 넣어줍니다. 바로 아까 발급받은 API KEY지요.그리고 Add secret을 누르면 우리가 indexnow에서 발급받은 api키를 안전하게 사용할 수 있습니다.
+그리고 Add secret을 누르면 우리가 indexnow에서 발급받은 api키를 안전하게 사용할 수 있습니다.
 
 ### Github action 설정
-index now를 처음 한다면 이 사람이 사이트의 주인인지 확인하는 작업을 실행합니다. 이 방법은 당신의 사이트 루트디렉토리에 api키가 확인되도록 하는겁니다.
 
-예를들어 당신의 api key가 indexapikey라면,
-`site.com/indexapikey.txt`에 방문했을 때  indexapikey라는 텍스트가 존재해야 합니다. 휴교에서는 루트디렉토리에 넣지 않고 static폴더에 넣어야 이게 가능합니다.
-static폴더를 생성하여 `indexapikey.txt` 텍스트 파일을 넣어 빌드하면 인증이 됩니다. 그러나 여기서 고민이 생깁니다. api key를 보호하기 위해 secret까지 했는데, static폴더에 나의 api key가 있다? 이상합니다.
-
-그리하여 github action을 통해 인증을 가능하게 하여 indexnow에 색인을 해야하는 방법을 실행해야 합니다.
-
-그래서, 배포를 실행하면, 배포와 함께 key를 실행하고, 그 key를 인증받을 수 있도록 기존에 휴고 build하던 action에 두가지를 추가했습니다.
+IndexNow는 사이트 소유자임을 확인하는 작업이 필요합니다. 이 작업은 사이트 루트 디렉토리에 API 키 파일이 있는지 확인하는 방식으로 이루어집니다.
+다음과 같은 GitHub Action 워크플로우 코드를 추가하여 인증 경로를 생성할 수 있습니다:
 
 #### API Key 인증 경로 생성
 ```yaml
@@ -106,7 +99,7 @@ static폴더를 생성하여 `indexapikey.txt` 텍스트 파일을 넣어 빌드
       - name: Save API key to static folder
         run: echo "${{ secrets.API_KEY }}" > static/${{ secrets.API_KEY }}.txt
 ```
-휴고를 빌드하기 전 먼저 이걸 추가하여 빌드하게 만들었습니다. 이러면 주소/apikey.txt에 방문이 가능해져 인증이 가능해집니다.
+이 코드를 통해 Hugo 빌드 전에 API 키 파일이 static 폴더에 저장되도록 설정할 수 있습니다. 이렇게 하면 웹사이트 주소 /apikey.txt에 방문했을 때 API 키가 존재하게 되어 인증이 가능합니다.
 
 전체코드는 이렇습니다.
 ```yaml
@@ -291,7 +284,7 @@ jobs:
 이 workflow를 사용하면 정해진 시간에 직접 사이트맵 색인을 실시합니다.
 
 #### git log 지우고 배포기록 모두 삭제하기
-static폴더에 api.txt를 업로드 했다면, 유출이 불안할 수 있습니다. 이게 불안하다면 git log와함께 배포기록을 모두 삭제하면 됩니다. 왜냐하면 소유 인증을 모두 받았으니, 더이상 website/apikey.txt가 필요 없거든요.
+API 키 유출 방지를 위해 static 폴더에 업로드한 APIKEY.txt 파일과 관련 기록들을 모두 삭제할 수 있습니다.
 
 ##### git 기록 지우기
  Git 내역을 모두 삭제하고 새롭게 시작하려면, 기존의 커밋 히스토리를 제거하고 새로운 커밋을 생성하는 방법을 사용할 수 있습니다. 이 작업은 주의가 필요하며, 특히 원격 저장소에 강제로 푸시해야 하므로 **데이터 손실**에 유의해야 합니다. 다음은 Git 내역을 완전히 삭제하는 방법입니다.
