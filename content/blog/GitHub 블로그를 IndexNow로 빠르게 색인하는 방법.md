@@ -108,6 +108,109 @@ static폴더를 생성하여 `indexapikey.txt` 텍스트 파일을 넣어 빌드
 ```
 휴고를 빌드하기 전 먼저 이걸 추가하여 빌드하게 만들었습니다. 이러면 주소/apikey.txt에 방문이 가능해져 인증이 가능해집니다.
 
+전체코드는 이렇습니다.
+```yaml
+# Sample workflow for building and deploying a Hugo site to GitHub Pages with IndexNow submission
+name: Deploy Hugo site to Pages and Submit to IndexNow
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches:
+      - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.120.2
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb          
+
+      - name: Install Sass
+        run: npm install -g sass
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
+
+      - name: Install Node.js dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+
+      # API Key 저장하는 부분 추가됨
+      - name: Save API key to static folder
+        run: echo "${{ secrets.INDEXNOW_KEY }}" > static/${{ secrets.INDEXNOW_KEY }}.txt
+
+      - name: Build with Hugo
+        env:
+          # For maximum backward compatibility with Hugo modules
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./public
+
+  # Deployment job to GitHub Pages
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+
+  # IndexNow submission job after deployment is complete
+  check-and-submit:
+    runs-on: ubuntu-latest
+    needs: deploy # This ensures that the IndexNow submission happens after deployment is complete.
+    steps:
+      - name: Submit sitemap to IndexNow using indexnow-action
+        uses: bojieyang/indexnow-action@v2
+        with:
+          sitemap-location: 'https://obrey.github.io/sitemap.xml'
+          key: ${{ secrets.INDEXNOW_KEY }}
+```
+이런식으로 빌드와 함께 인증이 되도록 실행했습니다.
+
 #### 직접 static에 api key를 올리기
 api key가 유출되는 것에 그렇게 민감하지 않거나 자신의 git 기록과 배포 기록을 지워도 상관이 없다면, github action에서 인증경로를 생성하지 않고, 바로 인증을 완료할 수 있습니다.
 루트디렉토리의 static폴더에 인증받은 api key.txt 파일을 넣고 배포합니다. 자신의 주소/apikey.txt를 입력했을때 제대로 나온다면 이제 인증받을 준비가 되었습니다.
@@ -156,7 +259,7 @@ def submit_to_indexnow(api_key, host, urls):
 if __name__ == "__main__":
     # 설정
     API_KEY = YOUR_INDEXNOW_KEY  # 여기에 기존 API 키를 입력하세요
-    HOST = YOUR_BLOG  # 여기에 도메인을 입력하세요
+    HOST = "obrey.github.io"  # 여기에 도메인을 입력하세요
 
     # 제출할 URLs
     urls_to_submit = [f"https://{HOST}/"]
@@ -182,7 +285,7 @@ jobs:
       - name: IndexNow
         uses: bojieyang/indexnow-action@v2
         with:
-          sitemap-location: 'https://yoursite.com/sitemap.xml'
+          sitemap-location: 'https://obrey.github.io/sitemap.xml'
           key: ${{ secrets.INDEXNOW_KEY }}
 ```
 이 workflow를 사용하면 정해진 시간에 직접 사이트맵 색인을 실시합니다.
