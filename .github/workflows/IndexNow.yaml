@@ -1,0 +1,15 @@
+name: "IndexNow Submission"
+on:
+  schedule:
+    - cron: '0 18 * * *' # 한국 KST 새벽 3시
+
+jobs:
+  submit-sitemaps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit Korean sitemap to IndexNow
+        uses: bojieyang/indexnow-action@v2
+        with:
+          sitemap-location: 'https://obrey.github.io/sitemap.xml'
+          key: ${{ secrets.INDEXNOW_KEY }}
+          endpoint: "api.indexnow.org"
